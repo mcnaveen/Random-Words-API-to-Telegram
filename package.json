@@ -1,5 +1,5 @@
 {
-	"name": "wotd",
+	"name": "wotd-tg",
 	"version": "1.0.0",
 	"description": "Word of the Day",
 	"main": "server.js",
