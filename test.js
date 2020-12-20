@@ -1,4 +1,3 @@
-require('dotenv').config()
 var cheerio = require('cheerio');
 var request = require('request');
 var nlp = require('compromise');
@@ -78,9 +77,3 @@ function proxyGenerator() {
 
   });
 }
-
-// start app on localhost port 3000
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log('listening on port ' + port);
-});
