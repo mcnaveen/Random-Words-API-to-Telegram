@@ -15,9 +15,9 @@ jobs:
       with:
          node-version: '14.x'
     - name: use node
+      env:
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
       run: |
        npm install
        npm run action
-       env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
