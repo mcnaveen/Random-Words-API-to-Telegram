@@ -1,3 +1,4 @@
+require('dotenv').config()
 var cheerio = require('cheerio');
 var request = require('request');
 var nlp = require('compromise');
