@@ -22,7 +22,7 @@ var wordOfDay = [];
   }, function(err, response, body, callback) {
       if (err) return console.error(err);
       
-      // get the HTML body from WordThink.com
+      // get the HTML body
       $ = cheerio.load(body);
 
       if(wordOfDay.length > 0){
