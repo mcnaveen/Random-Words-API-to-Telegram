@@ -1,5 +1,4 @@
 require('dotenv').config()
-var express = require('express');
 var cheerio = require('cheerio');
 var request = require('request');
 var nlp = require('compromise');
@@ -10,22 +9,7 @@ const { Telegraf } = require('telegraf');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const randomUseragent = require('random-useragent');
 var rua = randomUseragent.getRandom();
-var app = express();
 var wordOfDay = [];
-
-
-// Load the Main JS
-app.get('/', function (req, res) {
-  // allow access from other domains
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.header('X-Frame-Options', 'DENY');
-  res.header('X-XSS-Protection', '1; mode=block');
-  res.header('X-Content-Type-Options', 'nosniff');
-  res.header('Strict-Transport-Security', 'max-age=63072000');
-  res.setHeader('Content-Type', 'application/json');
-  app.disable( 'x-powered-by' );
   
   // use Cheerio to make request
   request({
@@ -38,7 +22,7 @@ app.get('/', function (req, res) {
   }, function(err, response, body, callback) {
       if (err) return console.error(err);
       
-      // get the HTML body from WordThink.com
+      // get the HTML body
       $ = cheerio.load(body);
 
       if(wordOfDay.length > 0){
@@ -68,10 +52,6 @@ app.get('/', function (req, res) {
 
   });
 
-
-
-});
-
 // Random Proxy
 function proxyGenerator() {
   let ip_addresses = [];
@@ -98,9 +78,3 @@ function proxyGenerator() {
 
   });
 }
-
-// start app on localhost port 3000
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log('listening on port ' + port);
-});

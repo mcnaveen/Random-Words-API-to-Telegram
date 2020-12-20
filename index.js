@@ -57,6 +57,9 @@ app.get('/', function (req, res) {
       var definition = decodeURI(definition.charAt(0).toUpperCase() + definition.slice(1));
       var pronunciation = decodeURI(pronounce.charAt(0).toUpperCase() + pronounce.slice(1));
 
+      wordOfDay.push({word: decodeURI(word.charAt(0).toUpperCase() + word.slice(1)), definition: decodeURI(definition.charAt(0).toUpperCase() + definition.slice(1)), pronunciation: decodeURI(pronounce.charAt(0).toUpperCase() + pronounce.slice(1))})
+
+
       var wordPush = '✍️ Word: ' + word + '\n\n📚 Definition: ' +  definition + '\n\n🗣️ Pronunciation: ' +  pronunciation ;
 
       bot.telegram.sendMessage(process.env.CHANNEL_ID, wordPush).catch( function(error){ console.error(error); } );
@@ -64,7 +67,8 @@ app.get('/', function (req, res) {
       console.log("User-Agent:", rua);
         
       // return a JSON object as a response
-      //res.send(JSON.stringify(wordOfDay, null, 4));
+      
+      res.send(JSON.stringify(wordOfDay, null, 4));
 
   });
 

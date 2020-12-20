@@ -2,7 +2,7 @@
 	"name": "wotd-tg",
 	"version": "1.0.0",
 	"description": "Word of the Day",
-	"main": "server.js",
+	"main": "index.js",
 	"dependencies": {
 		"api-key-auth": "^0.2.3",
 		"cheerio": "^1.0.0-rc.3",
