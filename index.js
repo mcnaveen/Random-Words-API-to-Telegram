@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
   }, function(err, response, body, callback) {
       if (err) return console.error(err);
       
-      // get the HTML body from WordThink.com
+      // get the HTML body from RandomWord.com
       $ = cheerio.load(body);
 
       if(wordOfDay.length > 0){
