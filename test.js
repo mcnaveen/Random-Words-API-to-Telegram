@@ -1,5 +1,4 @@
 require('dotenv').config()
-var express = require('express');
 var cheerio = require('cheerio');
 var request = require('request');
 var nlp = require('compromise');
@@ -10,12 +9,10 @@ const { Telegraf } = require('telegraf');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const randomUseragent = require('random-useragent');
 var rua = randomUseragent.getRandom();
-var app = express();
 var wordOfDay = [];
 
 
 // Load the Main JS
-app.get('/', function (req, res) {
   // allow access from other domains
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
@@ -67,10 +64,6 @@ app.get('/', function (req, res) {
       //res.send(JSON.stringify(wordOfDay, null, 4));
 
   });
-
-
-
-});
 
 // Random Proxy
 function proxyGenerator() {
