@@ -43,6 +43,17 @@ Follow the Documentation
 - [Deploying Node.js Apps on Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
 
 ## 🔀 Deploying to Vercel
+
+OneClick Deploy on Vercel
+
+After Deploy Goto Project Settings Add (Bot Token & Channel ID) in Environment Variables
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fmcnaveen%2FRandom-Words-API-to-Telegram.git)  
+
+OR
+
+Manual Setup
+
 ```
 - Fork the Repo
 - Login to Vercel (https://vercel.com/dashboard)
