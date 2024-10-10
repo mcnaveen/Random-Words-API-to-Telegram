@@ -6,7 +6,7 @@
 	"dependencies": {
 		"api-key-auth": "^0.2.3",
 		"cheerio": "^1.0.0-rc.12",
-		"compromise": "^13.11.4",
+		"compromise": "^14.14.2",
 		"compromise-pronounce": "0.0.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
